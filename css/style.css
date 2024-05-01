@@ -1,0 +1,333 @@
+/* http://meyerweb.com/eric/tools/css/reset/v2.0 | 20110126License: none (public domain)*/html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}
+
+:root {
+    --grid-width: 1000px;
+    --grid-min-width: 800px;
+
+    --color-main: #3B5998;
+    --color-white: #fff;
+    --color-light-blue: #6079AB;
+
+    --color-text-blue: #0E385F;
+    --color-green: #67A54B;
+}
+
+#app {
+    font-family: Verdana, sans-serif;
+}
+
+.container {
+    max-width: var(--grid-width);
+    min-width: var(--grid-min-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn {
+    outline: none;
+    padding: 2px 3px;
+    border: 1px solid rgba(0,0,0,0.4);
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+}
+
+.btn--green {
+    padding: 7px 25px;
+    background: var(--color-green);
+    color: var(--color-white);
+}
+
+
+/* >>> HEADER >>> */
+.header {
+    background: var(--color-main);
+    padding-top: 20px;
+    padding-bottom: 4px;
+}
+
+.header .logo {
+    align-self: flex-end;
+    margin-bottom: 8px;
+}
+
+.logo a {
+    font-size: 44px;
+    font-weight: bold;
+    color: var(--color-white);
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-form {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.auth-form label {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.auth-form input {
+    width: 100px;
+    height: 24px;
+    padding: 0;
+    border: none;
+}
+
+.auth-form__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form__input--password {
+    margin-left: 15px;
+}
+
+.auth-form .btn {
+    background: var(--color-light-blue);
+    color: var(--color-white);
+    font-weight: bold;
+    margin-left: 15px;
+    height: 24px;
+    padding: 5px 10px 7px 10px;
+    line-height: 100%;
+}
+/* <<< HEADER <<< */
+
+/* >>> SIGNUP PAGE >>> */
+.signup-page {
+    padding-top: 40px;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.signup-page:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #FFFFFF;
+    background: linear-gradient(180deg, #FFFFFF, #D4DAE9);
+    z-index: -1;
+}
+
+.signup-page__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-page__row .signup-page__col:nth-child(1) {
+    width: 420px;
+}
+
+.signup-page h2 {
+    color: var(--color-text-blue);
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 30px;
+}
+
+.signup-page__row .signup-page__col:nth-child(2) {
+    width: 350px;
+}
+
+.sign-form__title {
+    font-weight: bold;
+    color: var(--color-text-blue);
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.sign-form__text {
+    margin-left: 5px;
+}
+
+.sign-form__delimiter {
+    border: 1px solid var(--color-light-blue);
+    opacity: 0.5;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.sign-form__input {
+    display: flex;
+    margin-bottom: 7px;
+    align-items: center;
+}
+
+.sign-form__input > label, .sign-form__input > .label {
+    min-width: 100px;
+    max-width: 100px;
+    text-align: right;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sign-form__input div {
+    flex-grow: 1;
+    display: flex;
+}
+
+.sign-form__input input {
+    display: inline-block;
+    flex-grow: 1;
+    height: 30px;
+    border: 1px solid var(--color-light-blue);
+    outline: none;
+}
+
+.sign-form__input select {
+    height: 25px;
+}
+
+.sign-form__input--birthday {
+    align-items: flex-start;
+}
+
+.sign-form__input--birthday .label {
+    display: inline-block;
+    text-align: right;
+    width: 125px;
+    margin-right: 4px;
+}
+
+.sign-form__input--birthday .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-form__input--birthday .select {
+    width: 75px;
+    margin-right: 6px;
+}
+
+.sign-form__input--birthday a {
+    text-decoration: none;
+    color: var(--color-main);
+    margin-top: 7px;
+    line-height: 120%;
+}
+
+.sign-form a {
+    color: var(--color-main);
+}
+
+.sign-form__input p {
+    margin-top: 20px;
+    line-height: 120%;
+}
+
+.terms {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms a {
+    text-decoration: none;
+}
+
+.terms .btn {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    align-self: flex-start;
+    padding: 5px 25px;
+    margin-bottom: 7px;
+}
+
+.signup-page .delimiter {
+    border: 1px solid var(--color-light-blue);
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.reg-page-msg {
+    margin-top: 10px;
+    text-align: center;
+    line-height: 130%;
+    font-weight: bold;
+    color: #676767;
+}
+
+.reg-page-msg a {
+    text-decoration: none;
+    color: var(--color-main);
+    font-weight: bold;
+}
+/* <<< SIGNUP PAGE <<< */
+
+/* >>> FOOTER >>> */
+.footer .delimiter {
+    border: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+.footer .languages {
+    display: flex;
+    margin-top: 10px;
+    column-gap: 15px;
+}
+
+.footer .languages a {
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    color: #676767;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(1) a {
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(2) {
+    width: 600px;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(2) ul {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: flex-end;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(2) li {
+    margin-right: 5px;
+}
+
+.footer__bottom .footer__bottom__col:nth-child(2) a {
+    text-decoration: none;
+    margin-right: 5px;
+    color: var(--color-main);
+}
+/* <<< FOOTER <<< */
